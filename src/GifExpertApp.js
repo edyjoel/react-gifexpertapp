@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
-import AddCategory from './components/AddCategory';
-import GifGrid from './components/GifGrid';
+import React, { useState } from "react";
+import AddCategory from "./components/AddCategory";
+import GifGrid from "./components/GifGrid";
 
-const GifExpertApp = ({defaultCategories = [] }) => {
-
+const GifExpertApp = ({ defaultCategories = [] }) => {
   const [categories, setCategories] = useState(defaultCategories);
 
   // const handleAdd = () => {
@@ -15,19 +14,17 @@ const GifExpertApp = ({defaultCategories = [] }) => {
   return (
     <>
       <h1>GifExpertApp</h1>
-      <AddCategory setCategories={ setCategories } />
-      <hr/>
-
+      <p>Ingrese la búsqueda y presione enter para buscar.</p>
+      <AddCategory setCategories={setCategories} />
+      <hr />
 
       <ol>
-        {
-          categories.map((category, i) => (
-            <GifGrid key={ category } category={category } />
-          ))
-        }
+        {categories.map((category, i) => (
+          <GifGrid key={category} category={category} />
+        ))}
       </ol>
     </>
-  )
-}
+  );
+};
 
 export default GifExpertApp;
